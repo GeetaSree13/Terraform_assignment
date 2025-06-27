@@ -1,5 +1,5 @@
 resource "google_compute_instance" "vm_instance" {
-    name ="terraform-practice"
+    name ="terraform-instance"
     machine_type = "e2-medium"
     zone = "asia-southeast1-a"
 
@@ -19,12 +19,12 @@ tags = ["http-server", "https-server"]
 
 }
 
-resource "google_compute_firewall" "allow-http" {
-    name    = "allow-http"
+resource "google_compute_firewall" "allowing-http" {
+    name    = "allowing-http"
     network = "default"
 
     allow {
-        protocol = "udp"
+        protocol = "tcp"
         ports    = ["80"]
     }
     direction     = "INGRESS"
@@ -33,8 +33,8 @@ resource "google_compute_firewall" "allow-http" {
 
 }
 
-resource "google_compute_firewall" "allow-https" {
-    name = "allow-https"
+resource "google_compute_firewall" "allowing-https" {
+    name = "allowing-https"
     network = "default"
 
     allow {
