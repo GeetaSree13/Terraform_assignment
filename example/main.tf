@@ -19,8 +19,8 @@ tags = ["http-server", "https-server"]
 
 }
 
-resource "google_compute_firewall" "allow-http" {
-    name    = "allow-http"
+resource "google_compute_firewall" "allows-http" {
+    name    = "allows-http"
     network = "default"
 
     allow {
@@ -33,8 +33,8 @@ resource "google_compute_firewall" "allow-http" {
 
 }
 
-resource "google_compute_firewall" "allow-https" {
-    name = "allow-https"
+resource "google_compute_firewall" "allows-https" {
+    name = "allows-https"
     network = "default"
 
     allow {
