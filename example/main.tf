@@ -1,5 +1,5 @@
 resource "google_compute_instance" "vm_instance" {
-    name ="terraform-practicess"
+    name ="terraform-ins"
     machine_type = "e2-medium"
     zone = "asia-southeast1-a"
 
