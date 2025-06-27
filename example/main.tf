@@ -1,5 +1,5 @@
 resource "google_compute_instance" "vm_instance" {
-    name ="terraform-ins"
+    name ="terraform-instance"
     machine_type = "e2-medium"
     zone = "asia-southeast1-a"
 
@@ -19,8 +19,8 @@ tags = ["http-server", "https-server"]
 
 }
 
-resource "google_compute_firewall" "allows-http" {
-    name    = "allows-http"
+resource "google_compute_firewall" "allowing-http" {
+    name    = "allowing-http"
     network = "default"
 
     allow {
@@ -33,8 +33,8 @@ resource "google_compute_firewall" "allows-http" {
 
 }
 
-resource "google_compute_firewall" "allows-https" {
-    name = "allows-https"
+resource "google_compute_firewall" "allowing-https" {
+    name = "allowing-https"
     network = "default"
 
     allow {
