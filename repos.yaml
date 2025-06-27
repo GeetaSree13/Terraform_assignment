@@ -1,6 +1,6 @@
 version: 3
 repos:
-  - id: https://github.com/GeetaSree13/Terraform
+  - id: https://github.com/GeetaSree13/Terraform_assignment
     workflow: custom_workflow
     allowed_overrides: [workflow]
     allow_custom_workflows: true

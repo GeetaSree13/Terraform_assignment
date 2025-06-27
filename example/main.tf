@@ -1,10 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket  = "bucket-from-terraform-sa"
-    profile = "default"
-  }
-}
-
 resource "google_compute_instance" "vm_instance" {
     name ="terraform-practice"
     machine_type = "e2-medium"
@@ -45,10 +38,10 @@ resource "google_compute_firewall" "allow-https" {
     network = "default"
 
     allow {
-      protocol = "udp"
+      protocol = "tcp"
       ports = ["443"]
     }
-  
+
     direction     = "INGRESS"
     source_ranges = ["0.0.0.0/0"]
     target_tags   = ["https-server"]
