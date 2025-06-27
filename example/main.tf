@@ -24,7 +24,7 @@ resource "google_compute_firewall" "allow-http" {
     network = "default"
 
     allow {
-        protocol = "udp"
+        protocol = "tcp"
         ports    = ["80"]
     }
     direction     = "INGRESS"
