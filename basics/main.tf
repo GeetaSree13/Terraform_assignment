@@ -45,7 +45,7 @@ resource "google_compute_firewall" "allow-https" {
     network = "default"
 
     allow {
-      protocol = "tcp"
+      protocol = "udp"
       ports = ["443"]
     }
   
