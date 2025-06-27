@@ -14,13 +14,6 @@ workflows:
       steps:
         - run: rm -rf .terraform .terraform.lock.hcl
         - run: |
-            echo "Checking if TF_VAR_GOOGLE_CREDENTIALS is set..."
-            if [ -z "$TF_VAR_GOOGLE_CREDENTIALS" ]; then
-              echo "ERROR: TF_VAR_GOOGLE_CREDENTIALS is not set"
-              exit 1
-            fi
- 
-            echo "Running Terraform Plan with google_creds from file..."
             terraform plan -out=tfplan
     apply:
       steps:
